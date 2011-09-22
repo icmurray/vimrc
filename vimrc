@@ -31,6 +31,8 @@ endfunction
     
 map <F3> :call ToggleOverColHighlight()<CR>
 
+""" NERDTree Toggling """
+map NT :NERDTreeToggle<CR>
 
 """"""""""""""""""""" Taglist configuration """""""""""""""""""
 " Display function name in status bar:
