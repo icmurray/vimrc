@@ -34,6 +34,14 @@ map <F3> :call ToggleOverColHighlight()<CR>
 """ NERDTree Toggling """
 map NT :NERDTreeToggle<CR>
 
+""" FuzzyFinder options """
+map <C-f> :FufFile<CR>
+map <C-F> :FufCoverageFile<CR>
+map <C-b> :FufBuffer<CR>
+
+""" Scratch Buffer Mapping"""
+map <C-s> :Sscratch<CR>
+
 """"""""""""""""""""" Taglist configuration """""""""""""""""""
 " Display function name in status bar:
 let g:ctags_statusline=1
