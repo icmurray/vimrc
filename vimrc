@@ -6,6 +6,9 @@ set wildmenu
 set dictionary+=/usr/share/dict/words
 colorscheme desert
 
+" Set NarrRgn to open aplit vertically
+let g:nrrw_rgn_vert = 1
+
 " Move around windows with Ctrl-w and the normal movements keys
 map <C-h> <C-W>h
 map <C-l> <C-W>l
