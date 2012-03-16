@@ -24,6 +24,7 @@ map <F2> :set number!<CR>
 
 " Setup the the OverColLimit highlight group colours, but don't enable it yet
 highlight OverColLimit ctermbg=darkred ctermfg=white guibg=#FFD9D9
+highlight TrailingSpaces ctermbg=cyan ctermfg=white guibg=cyan
 
 function! ToggleOverColHighlight(...)
 
@@ -42,8 +43,27 @@ function! ToggleOverColHighlight(...)
     :let w:overcol_match_id = 0
   end
 endfunction
-    
+
+function! ToggleTrailingSpacesHighlight(...)
+
+  " Use the specified width, if given.
+  if a:0 > 0
+    let width = a:1
+  else
+    let width = 79
+  end
+
+  let w:trailingspaces_match_id = exists('w:trailingspaces_match_id') ? w:trailingspaces_match_id : 0
+  if w:trailingspaces_match_id == 0
+    :let w:trailingspaces_match_id=matchadd('TrailingSpaces', '\s\+$', -1)
+  else
+    :call matchdelete(w:trailingspaces_match_id)
+    :let w:trailingspaces_match_id = 0
+  end
+endfunction
+
 map <F3> :call ToggleOverColHighlight()<CR>
+map <F5> :call ToggleTrailingSpacesHighlight()<CR>
 
 """ NERDTree Toggling """
 map NT :NERDTreeToggle<CR>
