@@ -80,6 +80,9 @@ let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|pyc)$|(^|[/\\])\.(hg|g
 """ Scratch Buffer Mapping"""
 map <C-s> :Sscratch<CR>
 
+""" Diasble the bell in normal mode """
+set vb t_vb=
+
 """"""""""""""""""""" Taglist configuration """""""""""""""""""
 " Display function name in status bar:
 let g:ctags_statusline=1
