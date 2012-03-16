@@ -4,6 +4,17 @@ set wildmode=longest:full
 set wildmenu
 
 set dictionary+=/usr/share/dict/words
+colorscheme desert
+
+" Move around windows with Ctrl-w and the normal movements keys
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+
+" Scroll screen without moving the cursor to a new line
+map <C-M-j> <C-E>
+map <C-M-k> <C-Y>
 
 " F2 toggles line numbers
 map <F2> :set number!<CR>
