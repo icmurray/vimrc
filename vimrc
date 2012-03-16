@@ -69,9 +69,13 @@ map <F5> :call ToggleTrailingSpacesHighlight()<CR>
 map NT :NERDTreeToggle<CR>
 
 """ FuzzyFinder options """
-map <C-f> :FufFile<CR>
-map <C-F> :FufCoverageFile<CR>
+""" map <C-f> :FufFile<CR>
+""" map <C-f> :FufCoverageFile<CR>
 map <C-b> :FufBuffer<CR>
+nnoremap <C-f> :<C-u>FufFile **/<CR> 
+
+" Set the fuzzy finder to ignore pyc files
+let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|pyc)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])' 
 
 """ Scratch Buffer Mapping"""
 map <C-s> :Sscratch<CR>
