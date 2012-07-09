@@ -5,6 +5,14 @@ setlocal softtabstop=2
 setlocal expandtab
 setlocal formatoptions=tcqr
 
+setlocal tags=scalatags
+
+"folding settings
+setlocal foldmethod=indent   "fold based on indent
+setlocal foldnestmax=10      "deepest fold is 10 levels
+setlocal nofoldenable        "dont fold by default
+setlocal foldlevel=1         "this is just what i use
+
 if globpath(&rtp, 'plugin/fuf.vim') != ''
     "
     " FuzzyFinder stuff

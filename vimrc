@@ -1,10 +1,13 @@
+set t_Co=256
+
 filetype plugin on
 set guifont=Nimbus\ Mono\ L\ 10
 set wildmode=longest:full
 set wildmenu
 
 set dictionary+=/usr/share/dict/words
-colorscheme desert
+" colorscheme desert
+colorscheme molokai
 
 " Set NarrRgn to open aplit vertically
 let g:nrrw_rgn_vert = 1
@@ -12,18 +15,24 @@ let g:nrrw_rgn_vert = 1
 " Move around windows with Ctrl-w and the normal movements keys
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-map <C-j> <C-W>j
-map <C-k> <C-W>k
+
+" Scrolling
+map <C-j> <C-E>
+map <C-k> <C-Y>
+
 
 " Scroll screen without moving the cursor to a new line
-map <C-M-j> <C-E>
-map <C-M-k> <C-Y>
+" Requires some meta-key fudging
+" set <M-j>=j
+" set <M-k>=k
+" map <M-j> <C-E>
+" map <M-k> <C-Y>
 
 " F2 toggles line numbers
 map <F2> :set number!<CR>
 
 " Setup the the OverColLimit highlight group colours, but don't enable it yet
-highlight OverColLimit ctermbg=darkred ctermfg=white guibg=#FFD9D9
+" highlight OverColLimit ctermbg=darkred ctermfg=white guibg=#FFD9D9
 highlight TrailingSpaces ctermbg=cyan ctermfg=white guibg=cyan
 
 function! ToggleOverColHighlight(...)
@@ -37,13 +46,14 @@ function! ToggleOverColHighlight(...)
 
   let w:overcol_match_id = exists('w:overcol_match_id') ? w:overcol_match_id : 0
   if w:overcol_match_id == 0
+    " :let w:overcol_match_id=matchadd('SignColumn', '\%>79v.\+', -1)
     :let w:overcol_match_id=matchadd('OverColLimit', '\%>79v.\+', -1)
   else
     :call matchdelete(w:overcol_match_id)
     :let w:overcol_match_id = 0
   end
 endfunction
-
+    
 function! ToggleTrailingSpacesHighlight(...)
 
   " Use the specified width, if given.
@@ -75,7 +85,7 @@ map <C-b> :FufBuffer<CR>
 nnoremap <C-f> :<C-u>FufFile **/<CR> 
 
 " Set the fuzzy finder to ignore pyc files
-let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|pyc)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])' 
+let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|pyc|class)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])' 
 
 """ Scratch Buffer Mapping"""
 map <C-s> :Sscratch<CR>

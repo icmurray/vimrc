@@ -166,4 +166,4 @@ endif
 
 let b:current_syntax = "rst"
 
-" vim: set sts=4 sw=4:
+" vim: set ts=2 sw=2:
