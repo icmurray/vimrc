@@ -13,3 +13,5 @@ else
   autocmd BufWinEnter *.py call ToggleOverColHighlight()
   "au BufWinEnter *.py let w:m1=matchadd('OverColLimit', '\%>79v.\+', -1)
 endif
+
+setlocal showmatch
