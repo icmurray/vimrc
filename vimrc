@@ -77,6 +77,7 @@ map <F5> :call ToggleTrailingSpacesHighlight()<CR>
 
 """ NERDTree Toggling """
 map NT :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.pyc$', '\~$']
 
 """ FuzzyFinder options """
 """ map <C-f> :FufFile<CR>
