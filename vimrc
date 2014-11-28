@@ -113,3 +113,5 @@ let Tlist_File_Fold_Auto_Close = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype plugin indent on
 syntax on
+
+let g:pyflakes_use_quickfix = 0
